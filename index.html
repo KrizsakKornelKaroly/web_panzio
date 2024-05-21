@@ -5,17 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panzió</title>
     <style>
+        
         .baloldal{
             float: left;
+            margin-left: 20px;
         }
-        input[type="text"]{
+        .jobboldal{
+            margin: 10px;
+            padding: 10px;
+            margin-left: 40%;
+        }
+        input[type="text"]
+        {
             width: 20px;
+        }
+        .egeszmindenseg{
+            background-color: lightgray;
+            margin: 0 auto;
+            width: 70%;
+            font-size: large;
+        }
+        textarea{
+            width: 70%;
+            height: 150px;
         }
     </style>
 </head>
 <body>
-    <div>
-        <h1>Panzió - Szobafoglalás</h1>
+    <div class="egeszmindenseg">
+        <h1 style="text-align: center; color: white;">Panzió - Szobafoglalás</h1>
+        <div class="elsoszekcio">
+            <p class="baloldal">
+                Érkezés dátuma:
+                <br> 
+                Távozás dátuma:
+            </p>
+            <p class="jobboldal">
+                <input type="date" name="erkezes" id="erkezes">
+                <br>
+                <input type="date" name="tavozas" id="tavozas">
+            </p>
+            <hr>
+        <div class="masodikszekcio">
+            <p class="baloldal">
+                Szoba típusa:
+            </p>
+            <p class="jobboldal"> 
+                <input type="radio" name="agyak" id="egyagy">
+                <label for="egyagy">Egyágyas - 9.000 Ft/éj</label>
+                <br>
+
+                <input type="radio" name="agyak" id="ketagy">
+                <label for="ketagy">Kétágyas - 15.000 Ft/éj</label>
+                <br>
+
+                <input type="radio" name="agyak" id="ketegypot">
+                <label for="ketegypot">Kétágyas 1 pótággyal - 18.000 Ft/éj</label>
+                <br>
+
+                <input type="radio" name="agyak" id="ketketpot">
+                <label for="ketketpot">Kétágyas 2 pótággyal - 21.000 Ft/éj</label>
+            </p>
+        </div>
+        <div class="harmadikszekcio">
+            <p class="baloldal">
+                Vendégek száma:
+                <br>
+                Vendégek életkora:
+            </p>
+            <p class="jobboldal">
+                <select name="fovalaszto" id="fovalaszto">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select> fő
+                <br>
+                <input type="text" name="fo1" id="fo1"> év
+                <input type="text" name="fo2" id="fo2"> év
+                <input type="text" name="fo3" id="fo3"> év
+                <input type="text" name="fo4" id="fo4"> év
+            </p>
+        </div>
+        <div class="negyedikszekcio">
+            <p class="baloldal">Ellátás:</p>
+            <p class="jobboldal">
+                <input type="radio" name="ellatasv" id="reggeli">
+                <label for="reggeli">Reggeli - 900 Ft/nap/fő</label>
+                <br>
+                <input type="radio" name="ellatasv" id="felpanz">
+                <label for="felpanz">Félpanzió - 2.900 Ft/nap/fő</label>
+                <br>
+                <input type="radio" name="ellatasv" id="teljespanz">
+                <label for="reggeli">Teljes panzíó - 4.900 Ft/nap/fő</label>
+            </p>
+        </div>
+        <div class="otodikszekcio">
+            <p class="baloldal">Fürdő szolgáltatások:</p>
+            <p class="jobboldal">
+                <input type="checkbox" name="furdsz" id="belter">
+                <label for="belter">Beltéri medencék - 800 Ft/nap/fő</label><br>
+                <input type="checkbox" name="furdsz" id="kulter">
+                <label for="kulter">Kültéri medencék - 800 Ft/nap/fő</label><br>
+                <input type="checkbox" name="furdsz" id="szauna">
+                <label for="szauna">Szauna belépő - 800 Ft/nap/fő</label><br>
+                <input type="checkbox" name="furdsz" id="teljes">
+                <label for="teljes">Teljes belépő - 2.000 Ft/nap/fő</label>
+            </p>
+        </div>
+        <div class="hatodikszekcio">
+            <p class="baloldal">Egyéb kérdés, kívánság:</p>
+            <p class="jobboldal"><Textarea></Textarea></p>
+        </div>
+        </div>
+<!--
                 <div class="baloldal">
                     <p>
                         Érkezés dátuma:
@@ -86,7 +189,7 @@
                     </p>
                     
 
-                </div>        
+                </div>  -->      
     </div>
     
 
