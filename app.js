@@ -1,0 +1,6 @@
+function Adatbekeres()
+{
+    adatok = [
+        document
+    ]
+};

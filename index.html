@@ -22,12 +22,24 @@
         .egeszmindenseg{
             background-color: lightgray;
             margin: 0 auto;
-            width: 70%;
-            font-size: large;
+            width: 75%;
         }
         textarea{
             width: 70%;
             height: 150px;
+        }
+        hr{
+            margin: 0 auto;
+        }
+        @media screen and (max-width:650px) {
+            .egeszmindenseg{
+                width: 100%;
+            }
+        }
+        @media screen and (max-width:490px) {
+            .jobboldal{
+                margin-left: 35%;
+            }
         }
     </style>
 </head>
@@ -35,6 +47,7 @@
     <div class="egeszmindenseg">
         <h1 style="text-align: center; color: white;">Panzió - Szobafoglalás</h1>
         <div class="elsoszekcio">
+            <hr>
             <p class="baloldal">
                 Érkezés dátuma:
                 <br> 
@@ -68,6 +81,7 @@
             </p>
         </div>
         <div class="harmadikszekcio">
+            <hr>
             <p class="baloldal">
                 Vendégek száma:
                 <br>
@@ -86,6 +100,7 @@
                 <input type="text" name="fo3" id="fo3"> év
                 <input type="text" name="fo4" id="fo4"> év
             </p>
+            <hr>
         </div>
         <div class="negyedikszekcio">
             <p class="baloldal">Ellátás:</p>
@@ -99,6 +114,7 @@
                 <input type="radio" name="ellatasv" id="teljespanz">
                 <label for="reggeli">Teljes panzíó - 4.900 Ft/nap/fő</label>
             </p>
+            <hr>
         </div>
         <div class="otodikszekcio">
             <p class="baloldal">Fürdő szolgáltatások:</p>
@@ -112,84 +128,19 @@
                 <input type="checkbox" name="furdsz" id="teljes">
                 <label for="teljes">Teljes belépő - 2.000 Ft/nap/fő</label>
             </p>
+            <hr>
         </div>
         <div class="hatodikszekcio">
             <p class="baloldal">Egyéb kérdés, kívánság:</p>
             <p class="jobboldal"><Textarea></Textarea></p>
+            <hr>
         </div>
         </div>
-<!--
-                <div class="baloldal">
-                    <p>
-                        Érkezés dátuma:
-                        <br> 
-                        Távozás dátuma:
-                    </p>
-                    <p>
-                        Szoba típusa:
-                    </p>
-                    <p>
-                        Vendégek száma:
-                        <br>
-                        Vendégek életkora:
-                    </p>
-                    <p>
-                        Ellátás:
-                    </p>
-                    <p>Fürdő szolgáltatások:</p>
-                    <p>Egyéb kérdés, kívánság:</p>                    
-
-                </div>
-                <div class="jobboldal">
-                    <p >
-                        <input type="date" name="erkezes" id="erkezes">
-                        <br>
-                        <input type="date" name="tavozas" id="tavozas">
-                    </p>
-                    <p>
-                        <input type="radio" name="egyagy" id="egyagy">
-                        <label for="egyagy">Egyágyas - 9.000 Ft/éj</label>
-                        <br>
-        
-                        <input type="radio" name="ketagy" id="ketagy">
-                        <label for="ketagy">Kétágyas - 15.000 Ft/éj</label>
-                        <br>
-        
-                        <input type="radio" name="ketegypot" id="ketegypot">
-                        <label for="ketegypot">Kétágyas 1 pótággyal - 18.000 Ft/éj</label>
-                        <br>
-        
-                        <input type="radio" name="ketketpot" id="ketketpot">
-                        <label for="ketketpot">Kétágyas 2 pótággyal - 21.000 Ft/éj</label>
-                    </p>
-                    <p>
-                        <select name="fovalaszto" id="fovalaszto">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select> fő
-                        <br>
-                        <input type="text" name="fo1" id="fo1"> év
-                        <input type="text" name="fo2" id="fo2"> év
-                        <input type="text" name="fo3" id="fo3"> év
-                        <input type="text" name="fo4" id="fo4"> év
-                        <br>
-                        <input type="radio" name="ellatasv" id="reggeli">
-                        <label for="reggeli">Reggeli - 900 Ft/nap/fő</label>
-                        <br>
-                        <input type="radio" name="ellatasv" id="felpanz">
-                        <label for="felpanz">Félpanzió - 2.900 Ft/nap/fő</label>
-                        <br>
-                        <input type="radio" name="ellatasv" id="teljespanz">
-                        <label for="reggeli">Teljes panzíó - 4.900 Ft/nap/fő</label>
-                    </p>
-                    <p>
-                        <Textarea></Textarea>
-                    </p>
-                    
-
-                </div>  -->      
+        <div class="hetedikszekcio">
+            <p style="text-align: center">
+              <button onclick="Adatbekeres()">Költségkalkuláció</button>  
+            </p>
+        </div>  
     </div>
     
 
