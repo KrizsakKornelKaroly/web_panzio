@@ -50,12 +50,20 @@ function RadioFigyelo(radiok){
 
     }
 }
-
 function CheckBoxok()
 {
+    let belepokCB = document.getElementsByName("furdsz")
+    let belepotipus = "";
+    let belepok;
+    for(let i = 0; i < belepokCB.length; i++){
+        if(belepokCB[i].checked)
+        {
+            belepotipus += belepokCB[i].id;
+        }
 
+    }
+    return belepotipus;
 }
-
 function Adatbekeres()
 {
     adatok = [
