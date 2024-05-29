@@ -54,7 +54,7 @@ function CheckBoxok()
 {
     let belepokCB = document.getElementsByName("furdsz")
     let belepotipus = "";
-    let belepok;
+    let belepok = "";
     for(let i = 0; i < belepokCB.length; i++){
         if(belepokCB[i].checked)
         {
@@ -62,7 +62,25 @@ function CheckBoxok()
         }
 
     }
-    return belepotipus;
+
+    if(belepotipus.includes("belter"))
+    {
+        belepok += "Beltéri medencék, "
+    }
+    if(belepotipus.includes("kulter"))
+    {
+        belepok += "Kültéri medencék, "
+    }
+    if(belepotipus.includes("szauna"))
+    {
+        belepok += "Szauna belépő"
+    }
+    if(belepotipus.includes("belter") && belepotipus.includes("kulter") && belepotipus.includes("szauna") || belepotipus.includes("teljes")) 
+    {
+        belepok = "Teljes belépő"
+    }
+
+    return belepok;
 }
 function Adatbekeres()
 {
@@ -76,7 +94,11 @@ function Adatbekeres()
         document.getElementById("fo3").value,
         document.getElementById("fo4").value,
         RadioFigyelo("ellatas"),
-        CheckBoxok()
+        CheckBoxok(), 
     ]
-    alert(adatok)
-};
+    Kiiras();
+}
+function Kiiras(){
+    let kiirando = `Érkezés: ${adatok[0]}\nTávozás: ${adatok[1]}\nSzoba típusa: ${adatok[2]}\nVendégek száma: ${adatok[3]}\nEllátás típusa: ${adatok[8]}\nIgényelt szolgálatatások: ${adatok[9]}`;
+    alert(kiirando)
+}
