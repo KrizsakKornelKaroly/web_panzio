@@ -1,16 +1,85 @@
-let agyar = 1;
-let szallashossz = 1;
-let ellatasar = 1;
-let szolgar = 1;
-let letszam = document.getElementById("fovalaszto").value;
-
 let erkezdatum = document.getElementById("erkezes");
 let tavozdatum = document.getElementById("tavozas");
+let fomezo1 = document.getElementById("fo1");
+let fomezo2 = document.getElementById("fo2");
+let fomezo3 = document.getElementById("fo3");
+let fomezo4 = document.getElementById("fo4");
+let szallashossz = 0;
+let letszam = 1;
+
+fomezo2.disabled = true;
+fomezo3.disabled = true;
+fomezo4.disabled = true;
+
+function Adatbekeres() {
+    adatok = [
+        erkezdatum.value,
+        tavozdatum.value,
+        RadioFigyelo("agyak"),
+        document.getElementById("fovalaszto").value,
+        fomezo1.value,
+        fomezo2.value,
+        fomezo3.value,
+        fomezo4.value,
+        RadioFigyelo("ellatas"),
+        CheckBoxok(),
+        Penzkalkulator()
+    ]
+    SzallasHossza();
+    letszam = document.getElementById("fovalaszto").value; 
+    Kiiras();
+}
 
 function SzallasHossza() {
     let kulonbseg = Math.abs(new Date(tavozdatum.value) - new Date(erkezdatum.value));
     szallashossz = Math.floor(kulonbseg / (1000 * 60 * 60 * 24))
 }
+
+
+function IdopontEllenorzo(){
+    let maidatum = new Date();
+    let ev = maidatum.getFullYear();
+    let honap = String(maidatum.getMonth()+1).padStart(2, '0');
+    let nap = String(maidatum.getDate()).padStart(2, '0');
+    maidatum = ev+'-'+honap+'-'+nap;
+
+    erkezdatum.setAttribute("min", maidatum);
+    tavozdatum.setAttribute("min", maidatum);
+}
+
+function LetSzamEllenorzo(){
+    let letszam = document.getElementById("fovalaszto").value;
+    switch(letszam){
+        case "1":
+            fomezo1.disabled = false;
+            fomezo2.disabled = true;
+            fomezo3.disabled = true;
+            fomezo4.disabled = true;
+            break;
+        case "2":
+            fomezo1.disabled = false;
+            fomezo2.disabled = false;
+            fomezo3.disabled = true;
+            fomezo4.disabled = true;
+            break;
+        case "3": 
+            fomezo1.disabled = false;
+            fomezo2.disabled = false;
+            fomezo3.disabled = false;
+            fomezo4.disabled = true;
+            break;
+        case "4":
+            fomezo1.disabled = false;
+            fomezo2.disabled = false;
+            fomezo3.disabled = false;
+            fomezo4.disabled = false;
+            break;
+        default:
+            break;
+    }
+}
+
+
 
 function Penzkalkulator(){
     return (
@@ -106,24 +175,9 @@ function CheckBoxok() {
 
     return belepok;
 }
-function Adatbekeres() {
-    adatok = [
-        erkezdatum.value,
-        tavozdatum.value,
-        RadioFigyelo("agyak"),
-        document.getElementById("fovalaszto").value,
-        document.getElementById("fo1").value,
-        document.getElementById("fo2").value,
-        document.getElementById("fo3").value,
-        document.getElementById("fo4").value,
-        RadioFigyelo("ellatas"),
-        CheckBoxok(),
-        Penzkalkulator()
-    ]
-    Kiiras();
-    SzallasHossza();
-}
+
 function Kiiras() {
-    let kiirando = `Érkezés: ${adatok[0]}\nTávozás: ${adatok[1]}\nSzoba típusa: ${adatok[2]}\nVendégek száma: ${adatok[3]}\nEllátás típusa: ${adatok[8]}\nIgényelt szolgálatatások: ${adatok[9]}\nA teljes összeg: ${adatok[10]}`;
+    let kiirando = 
+    `Érkezés: ${adatok[0]}\nTávozás: ${adatok[1]}\nSzoba típusa: ${adatok[2]}\nVendégek száma: ${adatok[3]} fő\nEllátás típusa: ${adatok[8]}\nIgényelt szolgálatatások: ${adatok[9]}\nA teljes összeg: ${Penzkalkulator()}`;
     alert(kiirando)
 }
